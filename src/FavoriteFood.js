@@ -7,21 +7,14 @@ class FavoriteFood extends Component {
       label: "YES I love burgers",
       favorite: true,
     }
-
     this.onClickHandler = this.onClickHandler.bind(this);
   }
 
   onClickHandler() {
-    if (this.state.favorite) {
-      this.setState({
-        label: "I hate burgers but I love salad",
-        favorite: false,
-      })
-    } else { this.setState({
-        label: "YES I love burgers",
-        favorite: true,
-    })}
-  }
+     (this.state.favorite) ?
+       (this.setState({ label: "I hate burgers but I love salad", favorite: false, })) :
+       (this.setState({ label: "YES I love burgers", favorite: true, }))
+ }
 
   render() {
     return(
@@ -30,7 +23,6 @@ class FavoriteFood extends Component {
           <button onClick= { this.onClickHandler } />
           {this.state.label}
       </div>
-
     )
   }
 }
