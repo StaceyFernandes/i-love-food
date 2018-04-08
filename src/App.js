@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './burgerIcon.png';
-import FavoriteFood from './FavoriteFood';
+import logo from './images/burgerIcon.png';
+import FavoriteFood from './components/FavoriteFood';
 import './App.css';
 
 class App extends Component {
