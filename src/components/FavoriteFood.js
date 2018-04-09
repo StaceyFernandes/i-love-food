@@ -3,23 +3,44 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   height: 25px;
-  widht: 15px;
+  width: 95px;
   border-radius: 2px;
   text-align: center;
   border: 1px solid black;
   background-color: grey;
-`;
-const Img = styled.div`
+  margin: auto;
 `;
 
+const Img = styled.div`
+  & img {
+    max-width: 90%;
+    margin: auto;
+  }
+`;
+
+const Answer = styled.div`
+  margin: 20px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+`;
+
+const Question = styled.div`
+  margin: 20px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+`;
 class FavoriteFood extends Component {
   constructor() {
     super();
     this.state = {
       labelYesNo: "NEGATIVE",
-      label: "I love burgers too",
+      label: "I love burgers!",
       favorite: true,
-      image: '../images/wineTable.jpg',
     }
     this.onClickHandler = this.onClickHandler.bind(this);
   }
@@ -27,29 +48,29 @@ class FavoriteFood extends Component {
   onClickHandler() {
      (this.state.favorite) ?
        (this.setState({
-         label: "I hate burgers but I love salad",
+         label: "I tried making friends with salad, it didn't work",
          favorite: false,
          labelYesNo: "YESSS",
-         image: "../images/wineTable.jpg",
         })) :
        (this.setState({
-         label: "I love burgers too",
+         label: "I love burgers too - let's be friends",
          favorite: true,
          labelYesNo: "NEGATIVE",
-         image: "../images/wineTable.jpg"
         }))
  }
 
-  render() {
-  //  const image = {this.state.image}
-    return(
-      <div>Are burgers your favorite food?
-        <br />
-        <Button onClick= { this.onClickHandler }>{this.state.labelYesNo}</Button>
-        <br />
-        {this.state.label}
-        <img src={require('../images/wineTable.jpg')} alt="hello" />
+ getImages() {
+   return
+ }
 
+  render() {
+    return(
+      <div>
+        <br />
+        <Question>Are burgers your favorite food?</Question>
+        <Button onClick= { this.onClickHandler }>{this.state.labelYesNo}</Button>
+        <Answer>Food Bot says: {this.state.label}</Answer>
+        <Img><img src={require('../images/mussels.jpg')} /></Img>
       </div>
     )
   }
