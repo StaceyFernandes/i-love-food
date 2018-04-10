@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { imageSources } from '../listImages.json';
 
 const Button = styled.button`
-  height: 25px;
+  height: 35px;
   width: 95px;
   border-radius: 2px;
   text-align: center;
@@ -13,8 +14,9 @@ const Button = styled.button`
 
 const Img = styled.div`
   & img {
-    max-width: 90%;
+    max-width: 80%;
     margin: auto;
+    max-height: 800px;
   }
 `;
 
@@ -43,6 +45,11 @@ class FavoriteFood extends Component {
       favorite: true,
     }
     this.onClickHandler = this.onClickHandler.bind(this);
+    this.getImages = this.getImages.bind(this);
+  }
+
+  getImages() {
+    return
   }
 
   onClickHandler() {
@@ -60,7 +67,10 @@ class FavoriteFood extends Component {
  }
 
  getImages() {
-   return
+   console.log(imageSources)
+   return imageSources.map((imageSrc) =>
+    <Img><img src={require(`${imageSrc}`)} alt={ imageSrc } /></Img>
+  );
  }
 
   render() {
@@ -70,7 +80,7 @@ class FavoriteFood extends Component {
         <Question>Are burgers your favorite food?</Question>
         <Button onClick= { this.onClickHandler }>{this.state.labelYesNo}</Button>
         <Answer>Food Bot says: {this.state.label}</Answer>
-        <Img><img src={require('../images/mussels.jpg')} /></Img>
+        { this.getImages() }
       </div>
     )
   }
