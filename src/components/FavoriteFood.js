@@ -14,7 +14,7 @@ const Button = styled.button`
 
 const Img = styled.div`
   & img {
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
     max-height: 800px;
   }
@@ -48,10 +48,6 @@ class FavoriteFood extends Component {
     this.getImages = this.getImages.bind(this);
   }
 
-  getImages() {
-    return
-  }
-
   onClickHandler() {
      (this.state.favorite) ?
        (this.setState({
@@ -67,7 +63,6 @@ class FavoriteFood extends Component {
  }
 
  getImages() {
-   console.log(imageSources)
    return imageSources.map((imageSrc) =>
     <Img><img src={require(`${imageSrc}`)} alt={ imageSrc } /></Img>
   );

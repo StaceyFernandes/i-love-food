@@ -1,9 +1,9 @@
 {
 	"imageSources": [
     "./images/mussels.jpg",
-    "./images/lamb.jpg",
     "./images/duckCurry.jpg",
     "./images/squidInkMortonBayBug.jpg",
+		"./images/lamb.jpg",
     "./images/cherryWhiskeyCocktail.jpg"
 	]
 }

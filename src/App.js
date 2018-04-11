@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './images/burgerIcon.png';
+import logo from './components/images/burgerIcon.png';
 import FavoriteFood from './components/FavoriteFood';
 import './App.css';
 
