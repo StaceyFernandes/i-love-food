@@ -1,9 +1,8 @@
 {
 	"imageSources": [
+		"./images/burger.jpg",
+		"./images/chillifries.jpg",
     "./images/mussels.jpg",
-    "./images/duckCurry.jpg",
-    "./images/squidInkMortonBayBug.jpg",
-		"./images/lamb.jpg",
-    "./images/cherryWhiskeyCocktail.jpg"
+    "./images/duckCurry.jpg"
 	]
 }

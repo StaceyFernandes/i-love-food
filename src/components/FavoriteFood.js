@@ -8,13 +8,15 @@ const Button = styled.button`
   border-radius: 2px;
   text-align: center;
   border: 1px solid black;
-  background-color: grey;
+  background-color: #C8C9CB;
   margin: auto;
+  font-size: 15px;
+  font-weight: bold;
 `;
 
 const Img = styled.div`
   & img {
-    max-width: 90%;
+    max-width: 85%;
     margin: auto;
     max-height: 800px;
   }
@@ -36,6 +38,7 @@ const Question = styled.div`
   font-weight: bold;
   text-align: center;
 `;
+
 class FavoriteFood extends Component {
   constructor() {
     super();
@@ -73,7 +76,7 @@ class FavoriteFood extends Component {
       <div>
         <br />
         <Question>Are burgers your favorite food?</Question>
-        <Button onClick= { this.onClickHandler }>{this.state.labelYesNo}</Button>
+        Answer = <Button onClick= { this.onClickHandler }>{this.state.labelYesNo}</Button>
         <Answer>Food Bot says: {this.state.label}</Answer>
         { this.getImages() }
       </div>
