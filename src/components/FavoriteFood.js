@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { imageSources } from '../listImages.json';
+import Toggle from 'react-toggle';
+import "react-toggle/style.css";
 
-const Button = styled.button`
-  height: 35px;
-  width: 95px;
-  border-radius: 2px;
-  text-align: center;
-  border: 1px solid black;
-  background-color: #C8C9CB;
-  margin: auto;
-  font-size: 15px;
+const Question = styled.div`
+  margin: 20px;
+  padding: 20px;
+  font-size: 16px;
   font-weight: bold;
+  text-align: center;
 `;
 
 const Img = styled.div`
@@ -31,56 +29,51 @@ const Answer = styled.div`
   color: red;
 `;
 
-const Question = styled.div`
-  margin: 20px;
-  padding: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-`;
 
 class FavoriteFood extends Component {
   constructor() {
     super();
     this.state = {
-      labelYesNo: "NEGATIVE",
       label: "I love burgers!",
-      favorite: true,
-    }
+      button: true,
+    };
     this.onClickHandler = this.onClickHandler.bind(this);
     this.getImages = this.getImages.bind(this);
   }
 
   onClickHandler() {
-     (this.state.favorite) ?
-       (this.setState({
-         label: "I tried making friends with salad, it didn't work",
-         favorite: false,
-         labelYesNo: "YESSS",
-        })) :
-       (this.setState({
-         label: "I love burgers too - let's be friends",
-         favorite: true,
-         labelYesNo: "NEGATIVE",
-        }))
- }
+    if (this.state.button)
+      this.setState({
+        label: "I tried making friends with kale, it didn't work",
+        button: false,
+      });
+    else
+        this.setState({
+          label: "I love burgers too - let's be friends",
+          button: true,
+        });
+  }
 
- getImages() {
-   return imageSources.map((imageSrc) =>
-    <Img><img src={require(`${imageSrc}`)} alt={ imageSrc } /></Img>
-  );
- }
+  getImages() {
+    return imageSources.map((imageSrc) =>
+      <Img><img src={ require(`${imageSrc}`) } alt={ imageSrc } /></Img>
+    );
+  }
 
   render() {
-    return(
+    return (
       <div>
         <br />
         <Question>Are burgers your favorite food?</Question>
-        Answer = <Button onClick= { this.onClickHandler }>{this.state.labelYesNo}</Button>
+        <label>
+          <Toggle
+            defaultChecked={ this.state.button }
+            onChange={ this.onClickHandler } />
+        </label>
         <Answer>Food Bot says: {this.state.label}</Answer>
         { this.getImages() }
       </div>
-    )
+    );
   }
 }
 
