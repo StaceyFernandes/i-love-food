@@ -29,10 +29,9 @@ const Answer = styled.div`
   color: red;
 `;
 
-
 class FavoriteFood extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       label: "I love burgers!",
       button: true,
@@ -48,10 +47,10 @@ class FavoriteFood extends Component {
         button: false,
       });
     else
-        this.setState({
-          label: "I love burgers too - let's be friends",
-          button: true,
-        });
+      this.setState({
+        label: "I love burgers too - let's be friends",
+        button: true,
+      });
   }
 
   getImages() {

@@ -1,8 +1,9 @@
 {
 	"imageSources": [
-		"./images/burger.jpg",
-		"./images/chillifries.jpg",
-    "./images/mussels.jpg",
-    "./images/duckCurry.jpg"
+		"./images/burger_1.jpg",
+		"./images/burger_2.jpg",
+    "./images/burger_3.jpg",
+    "./images/burger_4.jpg",
+		"./images/burger_5.jpg"
 	]
 }
