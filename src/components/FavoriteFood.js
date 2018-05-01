@@ -12,7 +12,7 @@ const Question = styled.div`
   text-align: center;
 `;
 
-const Img = styled.div`
+const ImgStyle = styled.div`
   & img {
     max-width: 85%;
     margin: auto;
@@ -55,7 +55,7 @@ class FavoriteFood extends Component {
 
   getImages() {
     return imageSources.map((imageSrc) =>
-      <Img><img src={ require(`${imageSrc}`) } alt={ imageSrc } /></Img>
+      <ImgStyle><img src={ require(`${imageSrc}`) } alt={ imageSrc } /></ImgStyle>
     );
   }
 
